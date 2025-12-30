@@ -1,4 +1,9 @@
 
+// Coursework 1: KGL Data Validation System
+console.log();
+// Part A: Variable Declaration and Type Checking 
+console.log("---------------------------------------- Part A: Variable Declaration and Type Checking ----------------------------------")
+
 // 1. Variable declarations using appropriate keywords ( let or const )
 
 // companyName should not change, so I use const
@@ -79,7 +84,6 @@ console.log();
 console.log("---------------------------------------- Part C: Conditional Logic and Business Rules ----------------------------------")
 
 //Create variables for a procurement record:
-
 let userRole = 'Sales Agent';
 let procurementTonnage = 1500;
 let produceType = 'Beans';
@@ -108,3 +112,35 @@ if (userRole.toLowerCase() === "Sales Agent".toLowerCase()) {
     console.log(procurementTonnage >= 1000 && +costInUgx >= 10000 ? "Procurement record valid" : "Procurement record invalid");
 
 } 
+
+// for spacing 
+console.log();
+console.log();
+
+
+// Part D: Arrays and Produce Management
+console.log("---------------------------------------- Part D: Arrays and Produce Management ----------------------------------")
+// Create an array named kglProduce containing the five types of produce: ['Beans', 'Grain Maize', 'Cow peas', 'G-nuts', 'Soybeans'] . 
+const kglProduce = ['Beans', 'Grain Maize', 'Cow peas', 'G-nuts', 'Soybeans'];
+
+// Write code that:
+// Adds a new produce type "Green Peas" to the end of the array
+kglProduce.push("Green Peas"); // push adds an element to the end of the array
+
+// Removes the first item from the array (simulate oldest stock being sold)
+kglProduce.shift(); // shift removes the first element
+
+// Checks if "G-nuts" exists in the array using an appropriate array method
+let hasGNuts = kglProduce.includes("G-nuts"); // includes returns true if element exists
+console.log('Does kglProduce contain G-nuts?', hasGNuts);
+
+// Logs the final array and its length 
+console.log('Final kglProduce array:', kglProduce);
+console.log(`Number of items in kglProduce: ${kglProduce.length}`);
+
+// 12. Create a second array branch2Produce with values ['Maize', 'Beans'] 
+const branch2Produce = ['Maize', 'Beans']; 
+
+// Use the .concat() method to merge kglProduce and branch2Produce into a new array called allProduce
+const allProduce = kglProduce.concat(branch2Produce);
+console.log('All produce array after merging:', allProduce);
