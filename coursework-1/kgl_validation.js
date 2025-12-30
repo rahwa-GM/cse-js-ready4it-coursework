@@ -68,3 +68,43 @@ let isEmpty = cleanDealerName === "";
 // Log "Valid dealer name" or "Invalid dealer name" based on the result
 let message = nameGreaterThan2Chars && !isEmpty ? "Valid dealer name" : "Invalid dealer name";
 console.log(message);
+
+
+// for spacing 
+console.log();
+console.log();
+
+
+// Part C: Conditional Logic and Business Rules
+console.log("---------------------------------------- Part C: Conditional Logic and Business Rules ----------------------------------")
+
+//Create variables for a procurement record:
+
+let userRole = 'Sales Agent';
+let procurementTonnage = 1500;
+let produceType = 'Beans';
+let costInUgx = '50000';
+
+// Implement the following KGL business rules using if...else if...else statements:
+// Rule 1: No sales agent is allowed to record any produce entry. If userRole is 'Sales Agent', log an error message and do NOT proceed with the other checks.
+if (userRole.toLowerCase() === "Sales Agent".toLowerCase()) {
+    
+    console.log("Error: Sales agents are not allowed to record produce entries.");
+ 
+} else {
+    
+    if (procurementTonnage < 1000) { // Rule 2: For individual dealers, tonnage must be not less than 1000kg. Check if procurementTonnage >= 1000 . 
+    
+        console.log("Error: Procurement tonnage must be at least 1000kg.");
+
+    } else if (+costInUgx < 10000) { // Rule 3: The cost must be not less than 5 digits. First convert costInUgx to a Number type, then check if it's >= 10000. 
+
+        console.log("Error: Cost must be at least 5 digits.");
+    
+    }
+
+    // Use the logical AND ( && ) operator to create a single Boolean expression that checks if BOTH tonnage and cost conditions are met, 
+    // and log "Procurement record valid" or "Procurement record invalid".
+    console.log(procurementTonnage >= 1000 && +costInUgx >= 10000 ? "Procurement record valid" : "Procurement record invalid");
+
+} 
