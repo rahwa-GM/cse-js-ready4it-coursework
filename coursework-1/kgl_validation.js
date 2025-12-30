@@ -30,3 +30,41 @@ console.log("typeof(managerName):", typeof(managerName));       // undefined
 console.log("typeof(closedBranches):", typeof(closedBranches)); // object (null is type 'object' in JS)
 
 
+// for spacing 
+console.log();
+console.log();
+
+
+// Part B: String Manipulation and Validation
+console.log("---------------------------------------- Part B: String Manipulation and Validation ----------------------------------")
+
+// 4. Declare a variable dealerNameInput with the value " james BOND " 
+let dealerNameInput = " james BOND "; 
+
+// Removes the leading and trailing whitespace
+let trimmedDealerNameInput = dealerNameInput.trim();
+
+// Converts the cleaned name to proper title case (first letter of each word capitalized)
+let spaceIndex = trimmedDealerNameInput.indexOf(" ");
+let firstName = trimmedDealerNameInput.slice(0, spaceIndex);
+let lastName = trimmedDealerNameInput.slice(spaceIndex + 1);
+
+let firstNameTitleCase = firstName[0].toUpperCase() + firstName.slice(1).toLowerCase();
+let lastNameTitleCase = lastName[0].toUpperCase() + lastName.slice(1).toLowerCase();
+
+// Stores the result in a new variable cleanDealerName
+let cleanDealerName = firstNameTitleCase + " " + lastNameTitleCase;
+
+// Logs the result using a template literal: "Cleaned Dealer Name: [name]" 
+console.log(`Cleaned Dealer Name: ${cleanDealerName}`);
+
+// 6. Write a validation check using comparison operators to verify that cleanDealerName :
+// Has a length of not less than 2 characters
+let nameGreaterThan2Chars = cleanDealerName.length >= 2; 
+
+// Is not empty
+let isEmpty = cleanDealerName === "";
+
+// Log "Valid dealer name" or "Invalid dealer name" based on the result
+let message = nameGreaterThan2Chars && !isEmpty ? "Valid dealer name" : "Invalid dealer name";
+console.log(message);
