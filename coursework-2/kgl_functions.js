@@ -65,6 +65,45 @@ console.log(checkUserAuthorization('HR'));          // "unauthorized"
 console.log();
 console.log();
 
+// git commit -m "Completed Part A: Function Implementation (kgl_functions.js)"
 
-// Part B: String Manipulation and Validation
-console.log("---------------------------------------- Part B: String Manipulation and Validation ----------------------------------")
+// Part B: Object Creation and Manipulation
+console.log("---------------------------------------- Part B: Object Creation and Manipulation ----------------------------------")
+
+// Create a function createSalesRecord that takes four parameters ( produceName, tonnage, buyerName, amountPaid ) and returns an object
+function createSalesRecord(produceName, tonnage, buyerName, amountPaid){
+    return {        
+        id: Math.floor(Math.random() * 9000) + 1000,    // Generate a random number between 1000-9999
+        produceName: produceName,                       // parameter value
+        tonnageInKgs: tonnage,                          // parameter value
+        buyerName: buyerName,                           // parameter value
+        amountPaid: amountPaid,                         // parameter value
+        saleDate: new Date().toISOString().slice(0,10), // current date using new Date()
+        isCreditSale: false
+    }
+}
+
+
+// Create a sales record object by calling your function with test data. 
+const salesRecordObj = createSalesRecord("Maize", 1000, "Rahwa", 12000);
+// console.log(salesRecordObj);
+
+// Add a new property branch with value "Maganjo" using dot notation
+salesRecordObj.branch = "Maganjo";
+
+// Modify the isCreditSale property to true
+salesRecordObj.isCreditSale = true;
+
+// Add a dueDate property using bracket notation
+salesRecordObj["dueDate"] = new Date("2026-1-30").toISOString().slice(0,10);
+
+// Use Object.keys() to get all property names and log them
+// console.log(Object.keys(salesRecordObj));
+
+
+// Write a for...in loop that iterates over your sales record object 
+// and logs each property name and value in the format: "Property: [name], Value: [value]" 
+
+for (const key in salesRecordObj) {
+    // console.log(`Property: ${key}, Value: ${salesRecordObj[key]}`);
+}
