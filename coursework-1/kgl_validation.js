@@ -22,6 +22,7 @@ let managerName; // managerName (declare but do not assign a value)
 let closedBranches = null; // closedBranches with the value null
 
 
+console.log("---------------------------------------- Part A: #2 ----------------------------------")
 
 /* 
 2. Use typeof operator to check the data type of each variable
@@ -60,6 +61,8 @@ let lastNameTitleCase = lastName[0].toUpperCase() + lastName.slice(1).toLowerCas
 // Stores the result in a new variable cleanDealerName
 let cleanDealerName = firstNameTitleCase + " " + lastNameTitleCase;
 
+console.log("---------------------------------------- Part B: #5 ----------------------------------")
+
 // Logs the result using a template literal: "Cleaned Dealer Name: [name]" 
 console.log(`Cleaned Dealer Name: ${cleanDealerName}`);
 
@@ -69,6 +72,8 @@ let nameGreaterThan2Chars = cleanDealerName.length >= 2;
 
 // Is not empty
 let isEmpty = cleanDealerName === "";
+
+console.log("---------------------------------------- Part B: #6 ----------------------------------")
 
 // Log "Valid dealer name" or "Invalid dealer name" based on the result
 let message = nameGreaterThan2Chars && !isEmpty ? "Valid dealer name" : "Invalid dealer name";
@@ -107,6 +112,8 @@ if (userRole.toLowerCase() === "Sales Agent".toLowerCase()) {
     
     }
 
+    console.log("---------------------------------------- Part C: #9 ----------------------------------")
+
     // Use the logical AND ( && ) operator to create a single Boolean expression that checks if BOTH tonnage and cost conditions are met, 
     // and log "Procurement record valid" or "Procurement record invalid".
     console.log(procurementTonnage >= 1000 && +costInUgx >= 10000 ? "Procurement record valid" : "Procurement record invalid");
@@ -132,7 +139,9 @@ kglProduce.shift(); // shift removes the first element
 
 // Checks if "G-nuts" exists in the array using an appropriate array method
 let hasGNuts = kglProduce.includes("G-nuts"); // includes returns true if element exists
-console.log('Does kglProduce contain G-nuts?', hasGNuts);
+// console.log('Does kglProduce contain G-nuts?', hasGNuts);
+
+console.log("---------------------------------------- Part D: #11 ----------------------------------")
 
 // Logs the final array and its length 
 console.log('Final kglProduce array:', kglProduce);
@@ -143,4 +152,7 @@ const branch2Produce = ['Maize', 'Beans'];
 
 // Use the .concat() method to merge kglProduce and branch2Produce into a new array called allProduce
 const allProduce = kglProduce.concat(branch2Produce);
+
+console.log("---------------------------------------- Part D: #12 ----------------------------------")
+
 console.log('All produce array after merging:', allProduce);
