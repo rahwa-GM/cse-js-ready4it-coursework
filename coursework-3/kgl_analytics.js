@@ -65,5 +65,50 @@ let totalTonnage = arrOfProcurementObjs.reduce((preVal, curVal) => preVal + curV
 let totalCost = arrOfProcurementObjs.reduce((preVal, curVal) => preVal + curVal.costInUgx , 0);
 
 // Log both totals with appropriate labels using template literals
-console.log(`Total Tonnage: ${totalTonnage} kg`);
-console.log(`Total Cost: ${totalCost} UGX`);
+// console.log(`Total Tonnage: ${totalTonnage} kg`);
+// console.log(`Total Cost: ${totalCost} UGX`);
+
+
+
+// for spacing 
+console.log();
+console.log();
+
+
+// Part B: Sets for Unique Data Management
+console.log("---------------------------------------- Part B: Sets for Unique Data Management ----------------------------------")
+
+// Create a function getUniqueDealers that: Takes an array of procurement records as a parameter
+// Uses a Set to extract all unique dealer names
+// Returns an array of unique dealer names (convert Set back to array)
+const getUniqueDealers = arr => [...new Set(arr.map(obj => obj.dealerName))];
+    
+const procurementObj7 = createProcurementObject(7, "John", "Rice", 1200, 4000, new Date("2025-01-15"));
+
+const procurementObj8 =  createProcurementObject(8, "Mary", "Maize", 755, 3250, new Date("2025-01-18"));
+
+const procurementObj9 = createProcurementObject(9, "Peter", "Wheat", 1000, 9000, new Date("2025-02-02"));
+
+const newArrOfProcurementObjs = [...arrOfProcurementObjs, procurementObj7, procurementObj8, procurementObj9];
+
+// Call the function with your procurement data and log the result
+// console.log(getUniqueDealers(newArrOfProcurementObjs));
+
+
+
+// Create a Set called authorizedRoles and add these values: 'Manager' , 'Director' 
+const authorizedRoles = new Set();
+authorizedRoles.add('Manager');
+authorizedRoles.add('Director');
+
+// Write a function isAuthorizedForProcurement that: Takes a userRole parameter 
+// Uses the .has() method to check if the role exists in the Set
+// Returns a Boolean
+const isAuthorizedForProcurement = userRole => authorizedRoles.has(userRole);
+
+// Test the function with different roles and log the results
+/*
+console.log(isAuthorizedForProcurement('Manager'));     // true
+console.log(isAuthorizedForProcurement('Director'));    // true
+console.log(isAuthorizedForProcurement('Sales Agent')); // false
+*/
