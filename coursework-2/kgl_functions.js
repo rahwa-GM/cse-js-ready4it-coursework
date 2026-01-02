@@ -9,23 +9,26 @@ function calculateProcurementCost(tonnageInKg, pricePerKg) {
     return ( typeof(tonnageInKg) !== "number" || typeof(pricePerKg) !== "number" || Number.isNaN(tonnageInKg) || Number.isNaN(pricePerKg) || tonnageInKg < 0 || pricePerKg < 0) ? "Invalid input" : tonnageInKg * pricePerKg;
    
 }
-/*
+
+console.log("---------------------------------------- Part A: #1 ----------------------------------")
+
 console.log(calculateProcurementCost(20, 30));     // 600
 console.log(calculateProcurementCost(-20, 30));    // "Invalid input"
 console.log(calculateProcurementCost(20, "30"));  // "Invalid input"
 console.log(calculateProcurementCost(NaN, 30));   // "Invalid input"
-*/
+
 
 
 // Write an arrow function named validateBuyerName that: Takes one parameter: buyerName
 // Returns true if the name length is >= 2 and the name is not empty Returns false otherwise 
 const validateBuyerName = buyerName => buyerName !== "" && buyerName.length >= 2;
 
-/*
+console.log("---------------------------------------- Part A: #2 ----------------------------------")
+
 console.log(validateBuyerName('Rahwa'));    // true
 console.log(validateBuyerName('R'));        // false
 console.log(validateBuyerName(''));         // false
-*/
+
 
 // Create a function named checkUserAuthorization that: Takes one parameter: role
 function checkUserAuthorization(role){
@@ -50,13 +53,14 @@ function checkUserAuthorization(role){
 
 }
 
-/*
+console.log("---------------------------------------- Part A: #3 ----------------------------------")
+
 console.log(checkUserAuthorization('manager'));     // "procurement_and_sales"
 console.log(checkUserAuthorization('MANAGER'));     // "procurement_and_sales"
 console.log(checkUserAuthorization('sales agent')); // "sales_only"
 console.log(checkUserAuthorization('director'));    // "view_aggregations"
 console.log(checkUserAuthorization('HR'));          // "unauthorized"
-*/
+
 
 
 // for spacing 
@@ -80,10 +84,11 @@ function createSalesRecord(produceName, tonnage, buyerName, amountPaid){
     }
 }
 
+console.log("---------------------------------------- Part B: #5 ----------------------------------")
 
 // Create a sales record object by calling your function with test data. 
 const salesRecordObj = createSalesRecord("Maize", 1000, "Rahwa", 12000);
-// console.log(salesRecordObj);
+console.log(salesRecordObj);
 
 // Add a new property branch with value "Maganjo" using dot notation
 salesRecordObj.branch = "Maganjo";
@@ -94,15 +99,19 @@ salesRecordObj.isCreditSale = true;
 // Add a dueDate property using bracket notation
 salesRecordObj["dueDate"] = new Date("2026-1-30").toISOString().slice(0,10);
 
+console.log("---------------------------------------- Part B: #5 ----------------------------------")
+
 // Use Object.keys() to get all property names and log them
-// console.log(Object.keys(salesRecordObj));
+console.log(Object.keys(salesRecordObj));
+
 
 
 // Write a for...in loop that iterates over your sales record object 
 // and logs each property name and value in the format: "Property: [name], Value: [value]" 
+console.log("---------------------------------------- Part B: #6 ----------------------------------")
 
 for (const key in salesRecordObj) {
-    // console.log(`Property: ${key}, Value: ${salesRecordObj[key]}`);
+    console.log(`Property: ${key}, Value: ${salesRecordObj[key]}`);
 }
 
 
@@ -125,8 +134,10 @@ for (let i = 0; i < weeklyTonnage.length; i++) {
 // Calculates the average daily tonnage
 let averageTonnage = totalTonnage / weeklyTonnage.length;
 
+console.log("---------------------------------------- Part C: #7 ----------------------------------")
+
 // Logs both results (15 marks)
-// console.log(`The total tonnage for the week = ${totalTonnage}, and The average daily tonnage = ${averageTonnage.toFixed(2)}`);
+console.log(`The total tonnage for the week = ${totalTonnage}, and The average daily tonnage = ${averageTonnage.toFixed(2)}`);
 
 
 // Create an array of sales records (use your createSalesRecord function to create at least 5 records with varying data).
@@ -155,8 +166,10 @@ for (const obj of salesRecords) {
     creditSales++;
 }
 
+console.log("---------------------------------------- Part C: #8 ----------------------------------")
+
 // Logs "Total credit sales: [count]"
-// console.log("Total credit sales:", creditSales);
+console.log("Total credit sales:", creditSales);
 
 
 // Simulate a stock check: Create an inventory array:
@@ -165,6 +178,8 @@ const inventory = [
     {name: 'Maize', tonnage: 0},
     {name: 'G-nuts', tonnage: 300}
 ];
+
+console.log("---------------------------------------- Part C: #9 ----------------------------------")
 
 // Use a for loop with a break statement to: Search for the first item with tonnage === 0
 // When found, log "Manager Alert: [produce name] is out of stock" and exit the loop immediately
