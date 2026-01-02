@@ -59,13 +59,10 @@ console.log(checkUserAuthorization('HR'));          // "unauthorized"
 */
 
 
-
-
 // for spacing 
 console.log();
 console.log();
 
-// git commit -m "Completed Part A: Function Implementation (kgl_functions.js)"
 
 // Part B: Object Creation and Manipulation
 console.log("---------------------------------------- Part B: Object Creation and Manipulation ----------------------------------")
@@ -106,4 +103,74 @@ salesRecordObj["dueDate"] = new Date("2026-1-30").toISOString().slice(0,10);
 
 for (const key in salesRecordObj) {
     // console.log(`Property: ${key}, Value: ${salesRecordObj[key]}`);
+}
+
+
+
+// for spacing 
+console.log();
+console.log();
+
+
+// Part C: Loop Implementation and Data Processing
+console.log("---------------------------------------- Part C: Loop Implementation and Data Processing ----------------------------------")
+
+// Create an array of daily procurement tonnages for a week:
+const weeklyTonnage = [1200, 1500, 980, 2000, 1100, 1800, 1300];
+let totalTonnage = 0;
+// using a traditional for loop calculates the total tonnage for the week
+for (let i = 0; i < weeklyTonnage.length; i++) {
+    totalTonnage += weeklyTonnage[i];
+}
+// Calculates the average daily tonnage
+let averageTonnage = totalTonnage / weeklyTonnage.length;
+
+// Logs both results (15 marks)
+// console.log(`The total tonnage for the week = ${totalTonnage}, and The average daily tonnage = ${averageTonnage.toFixed(2)}`);
+
+
+// Create an array of sales records (use your createSalesRecord function to create at least 5 records with varying data).
+const sales1 = createSalesRecord("Maize", 1000, "Rahwa", 12000);
+sales1.isCreditSale = true; 
+
+const sales2 = createSalesRecord("Wheat", 800, "Daniel", 8000);
+
+const sales3 = createSalesRecord("Rice", 1500, "Martha", 18000);
+sales3.isCreditSale = true; 
+
+const sales4 = createSalesRecord("Sorghum", 1200, "Samuel", 14000);
+
+const sales5 = createSalesRecord("Beans", 900, "Lydia", 9500);
+sales5.isCreditSale = true; 
+
+// Put them all in an array
+const salesRecords = [sales1, sales2, sales3, sales4, sales5];
+
+
+// Write code using a for...of loop that: Counts how many credit sales exist 
+// Uses the continue statement to skip non-credit sales
+let creditSales = 0;
+for (const obj of salesRecords) {
+    if(!obj.isCreditSale) continue;
+    creditSales++;
+}
+
+// Logs "Total credit sales: [count]"
+// console.log("Total credit sales:", creditSales);
+
+
+// Simulate a stock check: Create an inventory array:
+const inventory = [
+    {name: 'Beans', tonnage: 500},
+    {name: 'Maize', tonnage: 0},
+    {name: 'G-nuts', tonnage: 300}
+];
+
+// Use a for loop with a break statement to: Search for the first item with tonnage === 0
+// When found, log "Manager Alert: [produce name] is out of stock" and exit the loop immediately
+for (const obj of inventory) {
+    if (obj.tonnage === 0) {
+        console.log(`Manager Alert: ${obj.name} is out of stock`);
+        break;
+    }
 }
